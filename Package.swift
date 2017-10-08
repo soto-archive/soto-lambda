@@ -1,10 +1,16 @@
-// swift-tools-version:3.1
+// swift-tools-version:4.0
 
 import PackageDescription
 
 let package = Package(
   name: "SwiftAWSLambda",
+  products: [
+      .library(name: "SwiftAWSLambda", targets: ["SwiftAWSLambda"]),
+  ],
   dependencies: [
-      .Package(url: "https://github.com/noppoMan/aws-sdk-swift-core.git", majorVersion: 0, minor: 2)
+      .package(url: "https://github.com/noppoMan/aws-sdk-swift-core.git", .upToNextMajor(from: "1.0.0"))
+  ],
+  targets: [
+      .target(name: "SwiftAWSLambda", dependencies: ["AWSSDKSwiftCore"]),
   ]
 )
