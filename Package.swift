@@ -8,7 +8,7 @@ let package = Package(
       .library(name: "Lambda", targets: ["Lambda"]),
   ],
   dependencies: [
-      .package(url: "https://github.com/swift-aws/aws-sdk-swift-core.git", .upToNextMinor(from: "4.0.0"))
+      .package(url: "https://github.com/swift-aws/aws-sdk-swift-core.git", .upToNextMinor(from: "4.2.0"))
   ],
   targets: [
       .target(name: "Lambda", dependencies: ["AWSSDKSwiftCore"]),
